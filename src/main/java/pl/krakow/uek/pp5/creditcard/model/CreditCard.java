@@ -39,4 +39,10 @@ class CreditCard {
     public BigDecimal currentBalance() {
         return cardBalance;
     }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+
 }

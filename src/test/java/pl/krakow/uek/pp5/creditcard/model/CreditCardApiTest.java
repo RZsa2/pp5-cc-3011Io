@@ -20,7 +20,7 @@ public class CreditCardApiTest {
         thereIsCreditCard();
         thereIsCCApi();
 
-        api.handle(new WithdrawCommand(CREDIT_CARD_NUMBER, WITHDRAW_VALUE));
+        api.handle(CREDIT_CARD_NUMBER, WITHDRAW_VALUE);
 
         currentBalanceForCCEquals(CREDIT_CARD_NUMBER, BigDecimal.valueOf(800));
     }
@@ -32,7 +32,7 @@ public class CreditCardApiTest {
     }
 
     private void thereIsCCApi() {
-        api = new CreditCardFacade();
+        api = new CreditCardFacade(this.ccStorage);
     }
 
     private void thereIsCreditCard() {
